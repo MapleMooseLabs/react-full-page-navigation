@@ -1,0 +1,26 @@
+{
+  "name": "react-full-page-navigation",
+  "version": "0.1.0",
+  "description": "Full page navigation component for React.js",
+  "main": "lib/FullPageNavigation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Opentrace/react-full-page-navigation.git"
+  },
+  "keywords": [
+    "react",
+    "navigation",
+    "babel",
+    "es6",
+    "fullpage"
+  ],
+  "author": "Mark Rabey <mark@opentrace.ca>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Opentrace/react-full-page-navigation/issues"
+  },
+  "homepage": "https://github.com/Opentrace/react-full-page-navigation#readme"
+}
