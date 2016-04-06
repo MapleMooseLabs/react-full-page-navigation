@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactComponent from './ReactComponent.js';
+import { FullPageNavigation } from './FullPageNavigation.js';
 
-ReactDOM.render(<ReactComponent />, document.getElementById('root'));
+ReactDOM.render(<FullPageNavigation />, document.getElementById('root'));
