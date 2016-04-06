@@ -2,7 +2,7 @@
   "name": "react-full-page-navigation",
   "version": "0.1.0",
   "description": "Full page navigation component for React.js",
-  "main": "lib/FullPageNavigation.js",
+  "main": "dist/FullPageNavigation.js",
   "scripts": {
     "test": "",
     "start": "node server",
