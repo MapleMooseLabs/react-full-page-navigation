@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+
+html {
+	box-sizing: border-box;
+  overflow-y: scroll;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+  	box-sizing: inherit;
+  }
+}

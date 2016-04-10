@@ -29,16 +29,31 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        "presets": ["react", "es2015", "stage-0", "react-hmre"]
+    loaders: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          "presets": ["react", "es2015", "stage-0", "react-hmre"]
+        }
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+      },
+      {
+        test: /\.scss/,
+        loaders: [
+          'style',
+          'css',
+          'sass',
+        ],
+      },
+      {
+        test: /\.json?$/,
+        loader: 'json'
       }
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }]
+    ]
   }
 };

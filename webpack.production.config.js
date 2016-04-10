@@ -3,8 +3,10 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 
 module.exports = {
   entry: [
@@ -12,17 +14,17 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js',
+    filename: '[name].js',
     publicPath: '/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.tpl.html',
+      template: 'app/index.tpl.html',
       inject: 'body',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('styles.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -45,12 +47,17 @@ module.exports = {
       query: {
         "presets": ["es2015", "stage-0", "react"]
       }
-    }, {
+    },
+    {
+      test: /\.(scss|sass)$/,
+      loader: "style!css!postcss!sass"
+    },
+    {
       test: /\.json?$/,
       loader: 'json'
     }]
   },
-  postcss: [
-    require('autoprefixer')
-  ]
+  postcss: function() {
+    return [autoprefixer];
+  },
 };

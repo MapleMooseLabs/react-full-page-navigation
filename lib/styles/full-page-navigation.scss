@@ -1,0 +1,123 @@
+/*------------------------------------*\
+    #FULL-PAGE NAVIGATION
+\*------------------------------------*/
+
+@import "generic/reset";
+@import "generic/normalize";
+@import "generic/base";
+
+.full-page-nav {
+  background-color: #ddd;
+}
+
+  .full-page-nav__section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    transition: opacity 0.4s;
+
+
+    &--active {
+      z-index: 1;
+    }
+
+
+    &:nth-child(1) {
+      background: red;
+    }
+
+    &:nth-child(2) {
+      background: green;
+    }
+
+    &:nth-child(3) {
+      background: blue;
+    }
+  }
+
+  .full-page-nav__controls {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    text-align: center;
+    z-index: 2;
+  }
+
+      .full-page-nav__indicator-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .full-page-nav__indicator {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin: 0 12px;
+        border-radius: 50%;
+
+
+        background-color: black;
+        transition: background-color 0.3s;
+        &--active,
+        &:hover {
+          background-color: #ddd;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+/**
+ * TRANSITIONS
+ */
+
+
+.full-page-nav--slide-left .full-page-nav__section {
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+
+  &--active {
+    transform: translateX(0);
+  }
+} // slide-left
+
+.full-page-nav--slide-right .full-page-nav__section {
+  transform: translateX(100%);
+  transition: transform 0.4s;
+
+  &--active {
+    transform: translateX(0);
+  }
+} // slide-right
+
+.full-page-nav--slide-top .full-page-nav__section {
+  transform: translateY(-100%);
+  transition: transform 0.4s;
+
+  &--active {
+    transform: translateX(0);
+  }
+} // slide-top
+
+.full-page-nav--slide-bottom .full-page-nav__section {
+  transform: translateY(100%);
+  transition: transform 0.4s;
+
+  &--active {
+    transform: translateX(0);
+  }
+} // slide-bottom
+
+.full-page-nav--fade .full-page-nav__section {
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  &--active {
+    opacity: 1;
+  }
+} // fade
